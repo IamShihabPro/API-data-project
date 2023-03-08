@@ -1,6 +1,6 @@
 const showFetch =()=>{
     const url =`https://openapi.programming-hero.com/api/ai/tools`
-    // console.log(url)
+
     fetch(url)
     .then(res=> res.json())
     .then(data=> showAllData(data.data.tools.slice(0,6)))
@@ -8,28 +8,22 @@ const showFetch =()=>{
 
 const showAllData = (data)=>{
   sortByDate(data)
-    // console.log(data)
+   
     const container = document.getElementById('card-data')
     container.innerHTML=''
 
     data.forEach(singleData =>{
-        // console.log(singleData.published_in)
 
         const {features, image, name, published_in, id } = singleData
-
-        // console.log(features)
 
         const div = document.createElement('div')
         div.classList.add('col','col-lg-4', 'col-sm-12', 'col-md-6' ,'my-2', 'gap-3')
 
         let featureData = ''
           features.forEach(feature =>{
-            // console.log(feature)
+           
             featureData += `<li> ${feature} </li>`
           })
-
-     
-        // feature()
         
         div.innerHTML=`
             
@@ -64,7 +58,7 @@ const showAllData = (data)=>{
 
 const sortByDate = (data)=>{
   document.getElementById('date-sort').addEventListener('click', ()=>{
-    // console.log('cliked btn')
+    
     const sortData = data.sort(
       (a,b)=> new Date (b.published_in).getTime() - new Date(a.published_in).getTime()
     )
@@ -76,7 +70,7 @@ const sortByDate = (data)=>{
 // See all data 
 const showAllDataTogether= ()=>{
     const url =`https://openapi.programming-hero.com/api/ai/tools`
-    // console.log(url)
+    
     fetch(url)
     .then(res=> res.json())
     .then(data=> showAllData(data.data.tools))
@@ -84,17 +78,9 @@ const showAllDataTogether= ()=>{
     
 }
 
-// safe code
-
-// <div class="row row-cols-4 row-cols-lg-3 g-2 g-lg-3 mt-2 ">
-//        <div class="  mt-5 gap-1">  ${loadPrice ? loadPrice :'Free of cost'} </div>
-
-
-
 // see modal data
 const showDetails = (id)=>{
     const url = ` https://openapi.programming-hero.com/api/ai/tool/${id}`
-    // console.log(url)
 
     fetch(url)
     .then(res => res.json())
@@ -103,23 +89,20 @@ const showDetails = (id)=>{
 }
 
 const singleModalDetails = (data)=>{
-    // console.log(data)
 
     let {tool_name, pricing, integrations, input_output_examples, image_link , description, features} = data
 
    
   //  features data load
     const feature = Object.values(features)
-    // console.log(feature)
 
     let featureDataLoad = ''
     for(i of feature){
-      // console.log(i.feature_name)
+
       featureDataLoad += `<li> ${i.feature_name ? i.feature_name : 'No data' } </li>`
     }
 
     // integration data load
-
     let integrationLoad = ''
     integrations.forEach(integrate =>{
       // console.log(integrate)
@@ -128,32 +111,10 @@ const singleModalDetails = (data)=>{
 
 
     // pricing load data
-
     let loadPrice = ''
     pricing.forEach(prices =>{
-      // console.log(prices)
       
-
-      // let price = Object.values(prices)
-      // console.log(price)
-
-
-      // for(let pri of price){
-      //   console.log( prices[pri])
-
-      //   loadPrice += `
-      //        <div class="col ">
-      //              <div class=" p-2 d-flex  bg-light">${prices[pri] ? prices[pri] : 'free of cost'}</div>
-      //         </div> `
-      // }
-
-      // <img src="${image_link[0] ? image_link[0] : 'No images found'}" class="img-fluid" alt=" "></img>
-
-
       let price = Object.values(prices)
-      // console.log(price)
-      // let price2 = price[0] + price[1]
-      // console.log(price2)
 
       price.forEach(i =>{
         // console.log(i)
@@ -171,10 +132,8 @@ const singleModalDetails = (data)=>{
 
     console.log(input_output_examples[0])
     input_output_examples.forEach(value =>{
-      // console.log(value)
 
       let value2 = Object.values(value)
-      // console.log(value2)
 
       value2.forEach(i =>{
         inputOutput1 += `<h5> ${i} </h5>`
