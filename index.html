@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ce32527ea4.js" crossorigin="anonymous" ></script>
+    <script src="https://kit.fontawesome.com/423f0bb40e.js" crossorigin="anonymous"></script>
+
+    <title>API Project!</title>
+  </head>
+  <body>
+
+    <header>
+        <div class="container mt-4 text-center">
+            <h2> AI Universe Hub </h2>
+            <button id="date-sort" type="button" class="btn btn-outline-primary my-4">Sort By Date</button>
+        </div> 
+    </header>
+
+    <main>
+
+      <section id="loader" class="container d-none">
+        <div class="text-center text-success">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
+
+        <section>
+            <div class="container">
+                <div id="card-data" class="row">
+                  
+                </div>
+              </div>
+
+            <div class="container text-center mb-5">
+                <button type="button" class="btn btn-outline-primary" onclick="showAllDataTogether()">Show All</button>
+            </div>
+        </section>
+
+        <!-- <div class="p-3  "> <h5 id="detailsModelDescription">  </h5> </div> -->
+
+      <section>
+           <!-- Modal -->
+        <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title" id="detailsModalLabel"> </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+
+            <div id="modal-body" class="modal-body">
+
+  
+            </div>
+              <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+              </div> -->
+          </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
